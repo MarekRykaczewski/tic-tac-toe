@@ -1,0 +1,16 @@
+#board-container {
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+#board-container div {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    
+}

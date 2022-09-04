@@ -26,6 +26,6 @@ const displayController = (() => {
 let newGameBoard = gameBoard()
 let newDisplayController = displayController()
 
-// console.log(newGameBoard.board)
+
 newDisplayController.updateDisplay(newGameBoard.board)
 
