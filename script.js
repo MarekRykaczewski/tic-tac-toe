@@ -8,7 +8,7 @@ const gameBoard = (() => {
     }
 })
 
-const displayController = (() => {
+const gameController = (() => {
     const updateDisplay = function(gameBoard) {
         let boardContainer = document.querySelector("#board-container")
         for (let i = 0; i < gameBoard.length; i++) {
@@ -25,11 +25,15 @@ const displayController = (() => {
     return {
         updateDisplay: updateDisplay
     }
-})
+});
+
+const createPlayer = (id, input) => {
+    return {id, input};
+};
 
 let newGameBoard = gameBoard()
-let newDisplayController = displayController()
+let newGameController = gameController()
 
 
-newDisplayController.updateDisplay(newGameBoard.board)
+newGameController.updateDisplay(newGameBoard.board)
 
