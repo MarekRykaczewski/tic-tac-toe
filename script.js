@@ -2,51 +2,63 @@ const createPlayer = (id, input) => {
     return {id, input};
 };
 
-const gameBoard = (() => {
+const gameController = (() => {
+
+    // Create board
     board = ['O', 'X', 'O',
              'O', 'X', 'O',
              'O', 'X', 'O']
-
-    return {
-        board: board
-    }
-})
-
-const gameController = (() => {
-
 
     // Create players
     const playerOne = createPlayer(1, 'O');
     const playerTwo = createPlayer(2, 'X');
 
 
-    // Update board
-    const updateDisplay = function(gameBoard) {
-        let boardContainer = document.querySelector("#board-container")
-        for (let i = 0; i < gameBoard.length; i++) {
-
-            let cell = document.createElement("div")
-            boardContainer.appendChild(cell)
-
-            let cellContent = document.createTextNode(gameBoard[i])
-            cell.appendChild(cellContent)
-        }
-
-    }
-
     // Setup game start
     let activePlayer = playerOne; 
 
+    // Selectors
+    let boardContainer = document.querySelector("#board-container")
+
+    // Update board
+    const updateDisplay = function(gameBoard) {
+        for (let i = 0; i < gameBoard.length; i++) {
+
+            // Create div for each item in board array
+            let cell = document.createElement("div")
+            boardContainer.appendChild(cell)
+
+            // Add event listener to each cell
+            cell.addEventListener('click', () => {
+                console.log(activePlayer.input)
+                gameBoard[i] = activePlayer.input
+                newGameController.clearDisplay(boardContainer)
+                newGameController.updateDisplay(board)
+            })
+
+            // Update content of each cell with array content
+            let cellContent = document.createTextNode(gameBoard[i])
+            cell.appendChild(cellContent)
+        }
+    }
+
+    // Clear board
+    const clearDisplay = function(boardContainer) {
+        while (boardContainer.firstChild) {
+            boardContainer.removeChild(boardContainer.lastChild)
+        }
+    }
+
+
     return {
-        updateDisplay: updateDisplay
+        updateDisplay: updateDisplay,
+        clearDisplay: clearDisplay
     }
 });
 
 
-
-let newGameBoard = gameBoard()
 let newGameController = gameController()
 
 
-newGameController.updateDisplay(newGameBoard.board)
+newGameController.updateDisplay(board)
 
