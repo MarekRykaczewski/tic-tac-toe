@@ -12,8 +12,12 @@ const displayController = (() => {
     const updateDisplay = function(gameBoard) {
         let boardContainer = document.querySelector("#board-container")
         for (let i = 0; i < gameBoard.length; i++) {
+
             let cell = document.createElement("div")
             boardContainer.appendChild(cell)
+
+            let cellContent = document.createTextNode(gameBoard[i])
+            cell.appendChild(cellContent)
         }
 
     }
