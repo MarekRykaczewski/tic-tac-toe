@@ -5,9 +5,9 @@ const createPlayer = (id, input) => {
 const gameController = (() => {
 
     // Create board
-    board = ['O', 'X', 'O',
-             'O', 'X', 'O',
-             'O', 'X', 'X']
+    board = [' ', ' ', ' ',
+             ' ', ' ', ' ',
+             ' ', ' ', ' ']
 
     // Create players
     const playerOne = createPlayer(1, 'O');
