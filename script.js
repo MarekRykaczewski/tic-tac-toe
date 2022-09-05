@@ -7,7 +7,7 @@ const gameController = (() => {
     // Create board
     board = ['O', 'X', 'O',
              'O', 'X', 'O',
-             'O', 'X', 'O']
+             'O', 'X', 'X']
 
     // Create players
     const playerOne = createPlayer(1, 'O');
@@ -34,6 +34,7 @@ const gameController = (() => {
                 gameBoard[i] = activePlayer.input
                 newGameController.clearDisplay(boardContainer)
                 newGameController.updateDisplay(board)
+                newGameController.switchPlayers()
             })
 
             // Update content of each cell with array content
@@ -49,10 +50,19 @@ const gameController = (() => {
         }
     }
 
+    // Switch players
+    const switchPlayers = function() {
+        if (activePlayer === playerOne) {
+            activePlayer = playerTwo
+        } else {
+            activePlayer = playerOne
+        }
+    }
 
     return {
         updateDisplay: updateDisplay,
-        clearDisplay: clearDisplay
+        clearDisplay: clearDisplay,
+        switchPlayers: switchPlayers
     }
 });
 
