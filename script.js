@@ -16,10 +16,11 @@ const gameController = (() => {
 
     // Setup game start
     let activePlayer = playerOne; 
-    let winner = ''
+    let winner = '';
 
     // Selectors
-    let boardContainer = document.querySelector("#board-container")
+    let boardContainer = document.querySelector("#board-container");
+    let resetButton = document.querySelector("#reset-button");
 
     // Update board
     const updateDisplay = function(gameBoard) {
@@ -50,6 +51,15 @@ const gameController = (() => {
         while (boardContainer.firstChild) {
             boardContainer.removeChild(boardContainer.lastChild)
         }
+
+    }
+
+    resetButton.onclick = function(){
+        board = [' ', ' ', ' ',
+                 ' ', ' ', ' ',
+                 ' ', ' ', ' ']
+        newGameController.clearDisplay(boardContainer);
+        newGameController.updateDisplay(board);
     }
 
     // Switch players
