@@ -71,9 +71,9 @@ const gameController = (() => {
             winner = activePlayer.input
         } else if (board[0] == activePlayer.input && board[3] == activePlayer.input && board[6] == activePlayer.input) {
             winner = activePlayer.input
-        } else if (board[1] == activePlayer.input && board[5] == activePlayer.input && board[7] == activePlayer.input) {
+        } else if (board[1] == activePlayer.input && board[4] == activePlayer.input && board[7] == activePlayer.input) {
             winner = activePlayer.input
-        } else if (board[2] == activePlayer.input && board[6] == activePlayer.input && board[8] == activePlayer.input) {
+        } else if (board[2] == activePlayer.input && board[5] == activePlayer.input && board[8] == activePlayer.input) {
             winner = activePlayer.input
         } else if (board[3] == activePlayer.input && board[4] == activePlayer.input && board[5] == activePlayer.input) {
             winner = activePlayer.input
@@ -85,8 +85,8 @@ const gameController = (() => {
         if (winner == 'O' || winner == 'X') {
             alert(winner)
         }
-}
-    
+    }
+
 
     return {
         updateDisplay: updateDisplay,
