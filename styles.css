@@ -1,4 +1,20 @@
+body {
+    height: 100vh;
+    width:  100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+}
+
 #board-container {
+    top: 50%;
     width: 500px;
     height: 500px;
     background-color: aliceblue;
@@ -9,11 +25,11 @@
 }
 
 #board-container div {
-    width: 100px;
-    height: 100px;
+    width: 3em;
+    height: 3em;
     background-color: tomato;
     text-align: center;
-    line-height: 100px;
+    line-height: 3em;
     font-size: 3em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
