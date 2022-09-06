@@ -5,32 +5,46 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 30px;
+    background-color: white;
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 4em;
     font-weight: bold;
+    margin: 0px;
+}
+
+button {
+    border: 0;
+    height: 30px;
+    width: 100px;
+
 }
 
 #board-container {
-    top: 50%;
+    padding: 20px;
     width: 500px;
     height: 500px;
-    background-color: aliceblue;
+    background-color: #e8f9fd;
+    border: 0;
+    border-radius: 12px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #board-container div {
     width: 3em;
     height: 3em;
-    background-color: tomato;
+    background-color: #2F5C8F;
     text-align: center;
     line-height: 3em;
     font-size: 3em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: #e8f9fd;
 }
