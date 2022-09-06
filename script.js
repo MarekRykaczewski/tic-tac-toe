@@ -16,6 +16,7 @@ const gameController = (() => {
 
     // Setup game start
     let activePlayer = playerOne; 
+    let winner = ''
 
     // Selectors
     let boardContainer = document.querySelector("#board-container")
@@ -34,6 +35,7 @@ const gameController = (() => {
                 gameBoard[i] = activePlayer.input
                 newGameController.clearDisplay(boardContainer)
                 newGameController.updateDisplay(board)
+                newGameController.checkWinner()
                 newGameController.switchPlayers()
             })
 
@@ -59,10 +61,38 @@ const gameController = (() => {
         }
     }
 
+    // Check winner
+    const checkWinner = function() {
+        if (board[0] == activePlayer.input && board[1] == activePlayer.input && board[2] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[3] == activePlayer.input && board[4] == activePlayer.input && board[5] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[6] == activePlayer.input && board[7] == activePlayer.input && board[8] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[0] == activePlayer.input && board[3] == activePlayer.input && board[6] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[1] == activePlayer.input && board[5] == activePlayer.input && board[7] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[2] == activePlayer.input && board[6] == activePlayer.input && board[8] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[3] == activePlayer.input && board[4] == activePlayer.input && board[5] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[0] == activePlayer.input && board[4] == activePlayer.input && board[8] == activePlayer.input) {
+            winner = activePlayer.input
+        } else if (board[2] == activePlayer.input && board[4] == activePlayer.input && board[6] == activePlayer.input) {
+            winner = activePlayer.input
+        }
+        if (winner == 'O' || winner == 'X') {
+            alert(winner)
+        }
+}
+    
+
     return {
         updateDisplay: updateDisplay,
         clearDisplay: clearDisplay,
-        switchPlayers: switchPlayers
+        switchPlayers: switchPlayers,
+        checkWinner: checkWinner
     }
 });
 
