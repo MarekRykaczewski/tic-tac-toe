@@ -21,6 +21,28 @@ const gameController = (() => {
     // Selectors
     let boardContainer = document.querySelector("#board-container");
     let resetButton = document.querySelector("#reset-button");
+    let changeSignButton = document.querySelector('#change-button');
+    let modal = document.querySelector(".modal");
+    let span = document.querySelector(".close");
+
+    // Close modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Reset game button
+    resetButton.onclick = function(){
+        board = [' ', ' ', ' ',
+                 ' ', ' ', ' ',
+                 ' ', ' ', ' ']
+        newGameController.clearDisplay(boardContainer);
+        newGameController.updateDisplay(board);
+    }
+
+    // Switch players button
+    changeSignButton.onclick = function(){
+        switchPlayers()
+    }
 
     // Update board
     const updateDisplay = function(gameBoard) {
@@ -54,13 +76,7 @@ const gameController = (() => {
 
     }
 
-    resetButton.onclick = function(){
-        board = [' ', ' ', ' ',
-                 ' ', ' ', ' ',
-                 ' ', ' ', ' ']
-        newGameController.clearDisplay(boardContainer);
-        newGameController.updateDisplay(board);
-    }
+
 
     // Switch players
     const switchPlayers = function() {
@@ -93,7 +109,7 @@ const gameController = (() => {
             winner = activePlayer.input
         }
         if (winner == 'O' || winner == 'X') {
-            alert(winner)
+            modal.style.display = "block";
         }
     }
 
