@@ -13,11 +13,6 @@ const gameController = (() => {
     const playerOne = createPlayer(1, 'O');
     const playerTwo = createPlayer(2, 'X');
 
-
-    // Setup game start
-    let activePlayer = playerOne; 
-    let winner = '';
-
     // Selectors
     let boardContainer = document.querySelector("#board-container");
     let resetButton = document.querySelector("#reset-button");
@@ -26,35 +21,37 @@ const gameController = (() => {
     let span = document.querySelector(".close");
     let currentSign = document.querySelector("#current-sign")
 
-    currentSign.innerHTML = activePlayer.input
+    // Setup game start
+    let activePlayer = playerOne; 
+    let winner = '';
+    currentSign.innerHTML = "First Player: " + activePlayer.input
 
     // Close modal
     span.onclick = function() {
         modal.style.display = "none";
-        board = [' ', ' ', ' ',
-        ' ', ' ', ' ',
-        ' ', ' ', ' ']
-        newGameController.clearDisplay(boardContainer);
-        newGameController.updateDisplay(board); 
-        changeSignButton.disabled = false;
-        currentSign.classList.remove("disabled")
+        resetGame()
     }
 
     // Reset game button
     resetButton.onclick = function(){
-        board = [' ', ' ', ' ',
-                 ' ', ' ', ' ',
-                 ' ', ' ', ' ']
-        newGameController.clearDisplay(boardContainer);
-        newGameController.updateDisplay(board);
-        changeSignButton.disabled = false;
-        currentSign.classList.remove("disabled")
+        resetGame()
     }
 
     // Switch players button
     changeSignButton.onclick = function(){
         switchPlayers()
-        currentSign.innerHTML = activePlayer.input
+        currentSign.innerHTML = "First Player: " + activePlayer.input
+    }
+
+    // Reset game function
+    const resetGame = function() {
+        board = [' ', ' ', ' ',
+        ' ', ' ', ' ',
+        ' ', ' ', ' ']
+        newGameController.clearDisplay(boardContainer);
+        newGameController.updateDisplay(board);
+        changeSignButton.disabled = false;
+        currentSign.classList.remove("disabled")
     }
 
     // Update board
@@ -138,7 +135,8 @@ const gameController = (() => {
         updateDisplay: updateDisplay,
         clearDisplay: clearDisplay,
         switchPlayers: switchPlayers,
-        checkWinner: checkWinner
+        checkWinner: checkWinner,
+        resetGame: resetGame
     }
 });
 
