@@ -53,11 +53,25 @@ h1 {
     margin: 0px;
 }
 
-button {
-    border: 0;
-    height: 30px;
-    width: 100px;
+#menu {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
 
+#menu * {
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#2F5C8F;
+    border: 0;
+    height: 40px;
+    width: 120px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 40px;
 }
 
 #board-container {

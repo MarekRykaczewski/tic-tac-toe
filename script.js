@@ -24,6 +24,9 @@ const gameController = (() => {
     let changeSignButton = document.querySelector('#change-button');
     let modal = document.querySelector(".modal");
     let span = document.querySelector(".close");
+    let currentSign = document.querySelector("#current-sign")
+
+    currentSign.innerHTML = activePlayer.input
 
     // Close modal
     span.onclick = function() {
@@ -46,6 +49,7 @@ const gameController = (() => {
 
     // Switch players button
     changeSignButton.onclick = function(){
+        currentSign.innerHTML = activePlayer.input
         switchPlayers()
     }
 
