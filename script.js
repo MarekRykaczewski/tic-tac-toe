@@ -49,8 +49,8 @@ const gameController = (() => {
 
     // Switch players button
     changeSignButton.onclick = function(){
-        currentSign.innerHTML = activePlayer.input
         switchPlayers()
+        currentSign.innerHTML = activePlayer.input
     }
 
     // Update board
@@ -63,6 +63,7 @@ const gameController = (() => {
 
             // Add event listener to each cell
             cell.addEventListener('click', () => {
+                changeSignButton.disabled = true;
                 console.log(activePlayer.input)
                 if (gameBoard[i] != 'X' && gameBoard[i] != 'O') {
                     gameBoard[i] = activePlayer.input
