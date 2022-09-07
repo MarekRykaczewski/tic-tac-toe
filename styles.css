@@ -61,7 +61,8 @@ h1 {
 }
 
 #current-sign.disabled {
-    background-color: gray;
+    transition: 0.3s;
+    background-color: rgb(215, 56, 27);
 }
 
 #menu button {
