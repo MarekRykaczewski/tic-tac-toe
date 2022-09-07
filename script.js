@@ -28,6 +28,11 @@ const gameController = (() => {
     // Close modal
     span.onclick = function() {
         modal.style.display = "none";
+        board = [' ', ' ', ' ',
+        ' ', ' ', ' ',
+        ' ', ' ', ' ']
+        newGameController.clearDisplay(boardContainer);
+        newGameController.updateDisplay(board); 
     }
 
     // Reset game button
