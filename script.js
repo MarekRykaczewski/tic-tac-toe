@@ -20,6 +20,7 @@ const gameController = (() => {
     let modal = document.querySelector(".modal");
     let span = document.querySelector(".close");
     let currentSign = document.querySelector("#current-sign")
+    let winnerMessage = document.querySelector("#winner-text")
 
     // Setup game start
     let activePlayer = playerOne; 
@@ -126,6 +127,7 @@ const gameController = (() => {
             winner = activePlayer.input
         }
         if (winner == 'O' || winner == 'X') {
+            winnerMessage.innerHTML = "The winner is " + winner;
             modal.style.display = "block";
         }
     }
