@@ -37,6 +37,7 @@ const gameController = (() => {
         newGameController.clearDisplay(boardContainer);
         newGameController.updateDisplay(board); 
         changeSignButton.disabled = false;
+        currentSign.classList.remove("disabled")
     }
 
     // Reset game button
@@ -47,6 +48,7 @@ const gameController = (() => {
         newGameController.clearDisplay(boardContainer);
         newGameController.updateDisplay(board);
         changeSignButton.disabled = false;
+        currentSign.classList.remove("disabled")
     }
 
     // Switch players button
@@ -65,6 +67,7 @@ const gameController = (() => {
 
             // Add event listener to each cell
             cell.addEventListener('click', () => {
+                currentSign.classList.add("disabled")
                 changeSignButton.disabled = true;
                 console.log(activePlayer.input)
                 if (gameBoard[i] != 'X' && gameBoard[i] != 'O') {
