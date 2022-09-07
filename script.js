@@ -36,6 +36,7 @@ const gameController = (() => {
         ' ', ' ', ' ']
         newGameController.clearDisplay(boardContainer);
         newGameController.updateDisplay(board); 
+        changeSignButton.disabled = false;
     }
 
     // Reset game button
@@ -45,6 +46,7 @@ const gameController = (() => {
                  ' ', ' ', ' ']
         newGameController.clearDisplay(boardContainer);
         newGameController.updateDisplay(board);
+        changeSignButton.disabled = false;
     }
 
     // Switch players button
