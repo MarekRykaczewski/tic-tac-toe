@@ -60,7 +60,12 @@ const gameController = (() => {
             // Add event listener to each cell
             cell.addEventListener('click', () => {
                 console.log(activePlayer.input)
-                gameBoard[i] = activePlayer.input
+                if (gameBoard[i] != 'X' && gameBoard[i] != 'O') {
+                    gameBoard[i] = activePlayer.input
+                } else {
+                    alert("Please make a legal move!")
+                    return
+                }
                 newGameController.clearDisplay(boardContainer)
                 newGameController.updateDisplay(board)
                 newGameController.checkWinner()
