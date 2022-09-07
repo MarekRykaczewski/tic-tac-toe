@@ -26,6 +26,7 @@ const gameController = (() => {
     let activePlayer = playerOne; 
     let winner = '';
     currentSign.innerHTML = "First Player: " + activePlayer.input
+    let playWithAI = false;
 
     // Close modal
     span.onclick = function() {
@@ -53,6 +54,7 @@ const gameController = (() => {
         newGameController.updateDisplay(board);
         changeSignButton.disabled = false;
         currentSign.classList.remove("disabled")
+        playWithAI = true;
     }
 
     // Update board
@@ -77,13 +79,23 @@ const gameController = (() => {
                 newGameController.clearDisplay(boardContainer)
                 newGameController.updateDisplay(board)
                 newGameController.checkWinner()
-                newGameController.switchPlayers()
+                newGameController.switchPlayers()                
             })
 
             // Update content of each cell with array content
             let cellContent = document.createTextNode(gameBoard[i])
             cell.appendChild(cellContent)
         }
+    }
+
+    // Regular AI move
+    const computerMove = function() {
+        let move = [Math.floor(Math.random() * board.length)]
+        console.log(move)
+        board[move] = activePlayer.input
+        newGameController.clearDisplay(boardContainer)
+        newGameController.updateDisplay(board)
+
     }
 
     // Clear board
@@ -93,8 +105,6 @@ const gameController = (() => {
         }
 
     }
-
-
 
     // Switch players
     const switchPlayers = function() {
@@ -138,7 +148,9 @@ const gameController = (() => {
         clearDisplay: clearDisplay,
         switchPlayers: switchPlayers,
         checkWinner: checkWinner,
-        resetGame: resetGame
+        resetGame: resetGame,
+        computerMove: computerMove,
+        board: board
     }
 });
 
