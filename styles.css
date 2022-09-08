@@ -1,16 +1,13 @@
 body {
     height: 100vh;
-    width:  100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background: #606c88;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .modal {
@@ -55,10 +52,11 @@ body {
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 4em;
+    font-size: 5em;
     font-weight: bold;
     margin: 0px;
     color: white;
+    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #menu {
@@ -71,7 +69,11 @@ h1 {
 
 #current-sign.disabled {
     transition: 0.3s;
-    background-color: rgb(215, 56, 27);
+    background: #EB3349;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 100%;
+    background-position: 0%;
 }
 
 #menu button {
@@ -79,11 +81,15 @@ h1 {
     font-size: 1em;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#2F5C8F;
+    border-radius: 26px;
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 200%;
+    background-position: 0%;
     border: 0;
     height: 3em;
     width: 10em;
-    border-radius: 20px;
     text-align: center;
     line-height: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -94,8 +100,13 @@ h1 {
     font-size: 1em;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#358f2f;
+    background: #134E5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 200%;
+    background-position: 0%;
     border: 0;
+    transition: 0.3s;
     height: 3em;
     width: 10em;
     border-radius: 20px;
@@ -105,34 +116,36 @@ h1 {
 }
 
 #board-container {
-    padding: 20px;
     width: 600px;
     height: 600px;
-    background-color: #e8f9fd00;
-    border: 0;
-    border-radius: 12px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #board-container div {
+    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+    width: 90%;
+    height: 90%;
+    background-color: #ffffff4f;
     text-align: center;
-    border: 6px solid black;
     line-height: 150px;
     font-size: 6em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+#board-container div:hover {
+    transition: 0.3s;
+    background-color: rgba(0, 186, 90, 0.488)
+}
+
 
 #board-container div p {
     margin: 0;
