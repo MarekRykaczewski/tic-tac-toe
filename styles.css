@@ -85,14 +85,19 @@ h1 {
     background: #4b6cb7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 200%;
-    background-position: 0%;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position .5s;
     border: 0;
     height: 3em;
     width: 10em;
     text-align: center;
     line-height: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#menu button:hover {
+    background-position: 0 0;
 }
 
 #current-sign {
