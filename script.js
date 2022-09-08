@@ -93,7 +93,7 @@ const gameController = (() => {
         let moveMade = false;
         while (moveMade == false) {
             let move = [Math.floor(Math.random() * board.length)]
-            if (board[move] != 'X' && board[move] != '0') {
+            if (board[move] != 'X' && board[move] != 'O') {
                 board[move] = activePlayer.input
                 moveMade = true;
             } else {
