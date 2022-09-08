@@ -59,17 +59,16 @@ h1 {
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#menu {
+.menu {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    width: 700px;
 }
 
-#current-sign.disabled {
-    transition: 0.3s;
+#play-computer.disabled {
     background: #EB3349;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -77,7 +76,7 @@ h1 {
     background-position: 0%;
 }
 
-#menu button {
+.menu button {
     color: white;
     font-size: 1.2em;
     font-weight: bold;
@@ -97,24 +96,8 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-#menu button:hover {
+.menu button:hover {
     background-position: 0 0;
-}
-
-#current-sign {
-    color: black;
-    font-size: 1.2em;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    border: 0;
-    transition: 0.3s;
-    height: 3em;
-    width: 18em;
-    border-radius: 20px;
-    text-align: center;
-    line-height: 60px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #board-container {

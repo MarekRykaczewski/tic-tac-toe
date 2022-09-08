@@ -19,13 +19,12 @@ const gameController = (() => {
     let changeSignButton = document.querySelector('#change-button');
     let modal = document.querySelector(".modal");
     let span = document.querySelector(".close");
-    let currentSign = document.querySelector("#current-sign")
     let winnerMessage = document.querySelector("#winner-text")
+    let playComputerButton = document.querySelector("#play-computer")
 
     // Setup game start
     let activePlayer = playerOne; 
-    let winner = '';
-    currentSign.innerHTML = "First Player: " + activePlayer.input
+    let winner = ''
     let playWithAI = false;
 
     // Close modal
@@ -42,7 +41,13 @@ const gameController = (() => {
     // Switch players button
     changeSignButton.onclick = function(){
         switchPlayers()
-        currentSign.innerHTML = "First Player: " + activePlayer.input
+    }
+
+    // Play computer button
+    playComputerButton.onclick = function() {
+        playWithAI = true;
+        playComputerButton.classList.add("disabled")
+        playComputerButton.disabled = true;
     }
 
     // Reset game function
@@ -52,8 +57,8 @@ const gameController = (() => {
         ' ', ' ', ' ']
         newGameController.clearDisplay(boardContainer);
         newGameController.updateDisplay(board);
-        changeSignButton.disabled = false;
-        currentSign.classList.remove("disabled")
+        playComputerButton.disabled = false;
+        playComputerButton.classList.remove("disabled")
         playWithAI = true;
     }
 
@@ -79,6 +84,9 @@ const gameController = (() => {
                 newGameController.clearDisplay(boardContainer)
                 newGameController.updateDisplay(board)
                 newGameController.checkWinner()
+                if (playWithAI == true) {
+                    computerMove()
+                }
                 newGameController.switchPlayers()                
             })
 
@@ -110,7 +118,9 @@ const gameController = (() => {
         while (moveMade == false) {
             let move = [Math.floor(Math.random() * board.length)]
             if (board[move] != 'X' && board[move] != 'O') {
+                newGameController.switchPlayers()
                 board[move] = activePlayer.input
+                newGameController.checkWinner()
                 moveMade = true;
             } else {
                 moveMade = false;
