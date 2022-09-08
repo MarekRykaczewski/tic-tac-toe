@@ -90,8 +90,18 @@ const gameController = (() => {
 
     // Regular AI move (random)
     const computerMove = function() {
-        let move = [Math.floor(Math.random() * board.length)]
-        board[move] = activePlayer.input
+        let moveMade = false;
+        while (moveMade == false) {
+            let move = [Math.floor(Math.random() * board.length)]
+            if (board[move] != 'X' && board[move] != '0') {
+                board[move] = activePlayer.input
+                moveMade = true;
+            } else {
+                moveMade = false;
+                console.log("AI tried to make illegal move")
+            }
+        }
+        
         newGameController.clearDisplay(boardContainer)
         newGameController.updateDisplay(board)
 
