@@ -88,10 +88,9 @@ const gameController = (() => {
         }
     }
 
-    // Regular AI move
+    // Regular AI move (random)
     const computerMove = function() {
         let move = [Math.floor(Math.random() * board.length)]
-        console.log(move)
         board[move] = activePlayer.input
         newGameController.clearDisplay(boardContainer)
         newGameController.updateDisplay(board)
