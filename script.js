@@ -90,6 +90,20 @@ const gameController = (() => {
         }
     }
 
+    // Check for draw
+    const checkDraw = function() {
+        let counter = 0
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] == 'X' || board[i] == 'O') {
+                counter++
+            }
+        }
+        if (counter == 9) {
+            winnerMessage.innerHTML = "The game ended in a draw!";
+            modal.style.display = "block";
+        }
+    }
+
     // Regular AI move (random)
     const computerMove = function() {
         let moveMade = false;
@@ -151,6 +165,8 @@ const gameController = (() => {
             winnerMessage.innerHTML = "The winner is " + winner;
             modal.style.display = "block";
             winner = ''
+        } else {
+            newGameController.checkDraw()
         }
     }
 
@@ -160,6 +176,7 @@ const gameController = (() => {
         clearDisplay: clearDisplay,
         switchPlayers: switchPlayers,
         checkWinner: checkWinner,
+        checkDraw: checkDraw,
         resetGame: resetGame,
         computerMove: computerMove,
         board: board
