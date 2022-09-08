@@ -6,7 +6,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background-color: white;
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 .modal {
@@ -51,6 +55,7 @@ h1 {
     font-size: 4em;
     font-weight: bold;
     margin: 0px;
+    color: white;
 }
 
 #menu {
@@ -98,9 +103,9 @@ h1 {
 
 #board-container {
     padding: 20px;
-    width: 500px;
-    height: 500px;
-    background-color: #e8f9fd;
+    width: 600px;
+    height: 600px;
+    background-color: #e8f9fd00;
     border: 0;
     border-radius: 12px;
     display: grid;
@@ -111,13 +116,23 @@ h1 {
 }
 
 #board-container div {
-    width: 3em;
-    height: 3em;
-    background-color: #2F5C8F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
     text-align: center;
-    line-height: 3em;
-    font-size: 3em;
+    border: 6px solid black;
+    line-height: 150px;
+    font-size: 6em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: #e8f9fd;
+    color: #000000;
+}
+
+#board-container div p {
+    margin: 0;
+    padding: 0;
+    position: absolute;
 }

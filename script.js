@@ -83,7 +83,9 @@ const gameController = (() => {
             })
 
             // Update content of each cell with array content
-            let cellContent = document.createTextNode(gameBoard[i])
+            let cellContent = document.createElement('p')
+            let cellContentText = document.createTextNode(gameBoard[i])
+            cellContent.appendChild(cellContentText)
             cell.appendChild(cellContent)
         }
     }
