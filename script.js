@@ -40,6 +40,12 @@ const gameController = (() => {
 
     // Switch players button
     changeSignButton.onclick = function(){
+        if (changeSignButton.classList.contains("disabled")) {
+            changeSignButton.classList.remove("disabled")
+        } else {
+            changeSignButton.classList.add("disabled")
+        }
+
         switchPlayers()
     }
 
@@ -59,6 +65,7 @@ const gameController = (() => {
         newGameController.updateDisplay(board);
         playComputerButton.disabled = false;
         playComputerButton.classList.remove("disabled")
+        changeSignButton.classList.remove("disabled")
         playWithAI = true;
     }
 
