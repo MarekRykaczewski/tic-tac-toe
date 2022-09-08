@@ -148,6 +148,7 @@ const gameController = (() => {
         if (winner == 'O' || winner == 'X') {
             winnerMessage.innerHTML = "The winner is " + winner;
             modal.style.display = "block";
+            winner = ''
         }
     }
 
