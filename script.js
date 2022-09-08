@@ -72,7 +72,6 @@ const gameController = (() => {
 
             // Add event listener to each cell
             cell.addEventListener('click', () => {
-                currentSign.classList.add("disabled")
                 changeSignButton.disabled = true;
                 console.log(activePlayer.input)
                 if (gameBoard[i] != 'X' && gameBoard[i] != 'O') {
