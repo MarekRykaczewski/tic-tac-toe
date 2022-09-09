@@ -125,13 +125,15 @@ const gameController = (() => {
         while (moveMade == false) {
             let move = [Math.floor(Math.random() * board.length)]
             if (board[move] != 'X' && board[move] != 'O') {
+                
                 newGameController.switchPlayers()
                 board[move] = activePlayer.input
                 newGameController.checkWinner()
                 moveMade = true;
             } else {
                 moveMade = false;
-                console.log("AI tried to make illegal move")
+                newGameController.checkDraw()
+                return
             }
         }
         
