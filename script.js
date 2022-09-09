@@ -66,7 +66,8 @@ const gameController = (() => {
         playComputerButton.disabled = false;
         playComputerButton.classList.remove("disabled")
         changeSignButton.classList.remove("disabled")
-        playWithAI = true;
+        playWithAI = false;
+        changeSignButton.disabled = false;
     }
 
     // Update board
